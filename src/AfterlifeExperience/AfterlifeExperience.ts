@@ -15,6 +15,10 @@ export default class AfterlifeExperience
     sizes: Sizes
     time: Time
     renderer: Renderer
+    sphere: THREE.Mesh
+    colorR: number = Math.random()
+    colorG: number = Math.random()
+    colorB: number = Math.random()
 
     constructor(canvas: HTMLElement|null = null, options: any = null) {
         if (experience) {
@@ -50,11 +54,11 @@ export default class AfterlifeExperience
 
     private addSphere(): void
     {
-        const sphere = new THREE.Mesh(
+        this.sphere = new THREE.Mesh(
             new THREE.SphereGeometry(1, 32),
             new THREE.MeshBasicMaterial({color: "#7a3a3a"})
         )
-        this.scene.add(sphere)
+        this.scene.add(this.sphere)
     }
 
     private resize(): void {
@@ -64,6 +68,11 @@ export default class AfterlifeExperience
 
     private update(): void {
         this.camera.onUpdate()
+        const colorR = Math.sin(Math.max(this.time.elapsed + this.colorR, 1) * .0001)
+        const colorG = Math.sin(Math.max(this.time.elapsed + this.colorG, 1) * .0002)
+        const colorB = Math.sin((this.time.elapsed + this.colorB) * .0003)
+        // @ts-ignore
+        this.sphere.material.color = new THREE.Color(colorR, colorG, colorB)
         this.renderer.onUpdate()
     }
 

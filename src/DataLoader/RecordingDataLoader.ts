@@ -12,7 +12,7 @@ interface SocialMediaLink {
     link: string
 }
 
-interface Recording {
+export interface Recording {
     sku: string
     title: string
     picture: string

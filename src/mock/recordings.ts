@@ -28,7 +28,7 @@ export default [
     {
         sku: "AL002",
         title: "Vaal – Wander To Hell",
-        picture: "/afterlife/recordings/AL001.jpeg",
+        picture: "/afterlife/recordings/AL002.jpeg",
         content: "The next installment on Afterlife comes from Vaal with remixes by Locked Groove and Baikal. ’Wander To Hell’ is a three track EP, with three versions of the same track that each encapsulate the spirit of Afterlife in their own individual way.\n" +
             "\n" +
             "Heralding from a rock n’roll and jazz background Vaal is unperturbed by the strict rules that define & guard electronic music. ‘Wander To Hell’ is stripped back and gentle, highlighting the emotive side of the label. The combination of alluring vocals and beautiful reverberating chords along with the ebb and flow of distortion makes it a composition that grips the listener from start to finish.\n" +

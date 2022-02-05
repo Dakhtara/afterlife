@@ -5,14 +5,14 @@
       <div class="grid md:grid-cols-2 gap-x-3 mb-16 md:mb-8">
           <img class="object-cover md:h-full" :src="event.picture" />
 
-        <div class="mt-5 md:mt-0">
+        <div class="flex flex-col justify-between mt-5 md:mt-0">
           <h3 class="text-xl mb-10">{{event.date}} {{event.location}}</h3>
 
           <p class="font-light mb-10">
             {{event.artists.join(' ')}}
           </p>
 
-          <a :href="event.facebookLink" >Facebook</a>
+            <a class="flex" target="_blank" :href="event.facebookLink" ><img src="/icons/facebook_white_72.png" class="mr-2" width="24" /> <span>Event</span></a>
         </div>
       </div>
 
