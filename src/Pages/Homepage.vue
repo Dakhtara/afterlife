@@ -1,6 +1,9 @@
 <template>
   <canvas id="afterlifeExperience" ref="canvas"></canvas>
-  <div class="experience-section"></div>
+  <!--  Div below only help to have a bigger space for the initial render and push all the rest-->
+  <div class="experience-section">
+
+  </div>
   <AboutSection/>
   <EventSection/>
   <RecordingSection/>
@@ -20,6 +23,7 @@ import {onBeforeUnmount, onMounted, onUnmounted, ref} from "vue";
 import AfterlifeExperience from "../AfterlifeExperience/AfterlifeExperience";
 
 const canvas = ref(null)
+const width = ref(window.innerWidth)
 let experience: AfterlifeExperience;
 onMounted(() => {
   const options: object = {}

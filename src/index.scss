@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind screens;
+@tailwind utilities;
+
+.font-family-roboto-slab {
+  font-family: 'Roboto Slab', serif;
+}
+
+.font-family-volkhov {
+  font-family: 'Volkhov', serif;
+}
+
+html,
+body {
+  width: 100%;
+  overflow: auto;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+  @apply text-slate-200;
+}
+
+
+.title {
+  @extend .font-family-volkhov;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: .37em;
+}

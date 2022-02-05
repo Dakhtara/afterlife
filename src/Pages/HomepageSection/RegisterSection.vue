@@ -1,5 +1,6 @@
 <template>
-  <h1>Register</h1>
+  <div class="container mx-auto mb-40">
+  <HomeTitle>Register</HomeTitle>
 
   <p>Register for more information and exclusive content</p>
 
@@ -10,8 +11,9 @@
     <input id="registerEmail" type="email"  />
     <input type="submit" value="Subscribe" />
   </form>
+  </div>
 </template>
 
 <script setup lang="ts">
-
+import HomeTitle from "../../components/HomeTitle.vue";
 </script>

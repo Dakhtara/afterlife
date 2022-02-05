@@ -1,6 +1,6 @@
 <template>
-  <div class="section">
-    <h1>Podcasts</h1>
+  <div class="container mx-auto mb-40">
+    <HomeTitle>Podcasts</HomeTitle>
     <div class="podcast" v-for="podcast in podcasts">
       <h1>{{ podcast.title }}</h1>
       <img :src="podcast.picture" alt="Image Podcast"/>
@@ -13,6 +13,7 @@
 
 
 import PodcastDataLoader from "../../DataLoader/PodcastDataLoader";
+import HomeTitle from "../../components/HomeTitle.vue";
 
 const podcastsDataLoader = new PodcastDataLoader()
 
