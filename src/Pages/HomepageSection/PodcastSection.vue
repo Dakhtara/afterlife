@@ -9,7 +9,7 @@
 
 </template>
 
-<script setup>
+<script setup lang="ts">
 
 
 import PodcastDataLoader from "../../DataLoader/PodcastDataLoader";

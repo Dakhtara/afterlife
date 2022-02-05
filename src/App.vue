@@ -4,29 +4,15 @@
 
 import AfterlifeExperience from "./AfterlifeExperience/AfterlifeExperience";
 import {onMounted, ref} from "vue";
-import Homepage from "./Pages/Homepage.vue";
 import TopNav from "./components/TopNav.vue";
 
-const canvas = ref(null)
 
-onMounted(() => {
-
-  const options: object = {}
-  console.log(import.meta.env.VITE_ENABLE_ORBIT_CONTROLS)
-  options.camera = {
-    orbitControls: import.meta.env.VITE_ENABLE_ORBIT_CONTROLS === '1'
-  }
-
-  const experience = new AfterlifeExperience(canvas.value, options)
-})
 </script>
 
 <template>
   <TopNav />
-  <canvas id="afterlifeExperience" ref="canvas"></canvas>
 
-  <Homepage />
-
+  <router-view></router-view>
 </template>
 
 <style>

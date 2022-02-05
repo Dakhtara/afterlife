@@ -12,7 +12,7 @@ interface CameraOptions {
 
 export default class Camera implements OnResizeTriggerInterface, OnUpdateTriggerInterface {
     experience: AfterlifeExperience
-    instance: THREE.Camera
+    instance: THREE.PerspectiveCamera
     sizes: Sizes
     scene: THREE.Scene
     canvas: HTMLElement

@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 
 import ImageSvgMasking from "../../components/ImageSvgMasking.vue";
 import ArtistDataLoader from "../../DataLoader/ArtistDataLoader";

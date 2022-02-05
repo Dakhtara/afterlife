@@ -1,19 +1,29 @@
 <template>
   <div class="top-nav">
-    <img src="/afterlife/common/afterlife-logo-word.svg" />
+    <router-link :to="{name: 'home'}">
+      <img src="/afterlife/common/afterlife-logo-word.svg" />
+    </router-link>
 
     <div class="right-item">
       <div class="">
-        Events
+        <router-link :to="{name: 'events'}">
+          Events
+        </router-link>
       </div>
       <div>
-        Recordings
+        <router-link :to="{name: 'recordings'}">
+          Recordings
+        </router-link>
       </div>
       <div>
-        Podcasts
+        <router-link :to="{name: 'podcasts'}">
+          Podcasts
+        </router-link>
       </div>
       <div>
-        Shop
+        <a href="https://afterlife-ofc.myshopify.com/" target="_blank">
+          Shop
+        </a>
       </div>
     </div>
   </div>

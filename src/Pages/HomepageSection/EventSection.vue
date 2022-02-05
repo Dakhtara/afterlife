@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import EventDataLoader from "../../DataLoader/EventDataLoader";
 
 const eventDataLoader = new EventDataLoader()
