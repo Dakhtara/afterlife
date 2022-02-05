@@ -6,15 +6,15 @@ import AfterlifeExperience from "./AfterlifeExperience/AfterlifeExperience";
 import {onMounted, ref} from "vue";
 import PodcastDataLoader from "./DataLoader/PodcastDataLoader";
 import ImageSvgMasking from "./components/ImageSvgMasking.vue";
+import ArtistDataLoader from "./DataLoader/ArtistDataLoader";
 
 const canvas = ref(null)
 const podcastDataLoader = new PodcastDataLoader()
 
-const podcasts = podcastDataLoader.loadAll().map((podcast) => {
+const podcasts = podcastDataLoader.loadAll()
 
-  podcast.mask = Math.round(Math.random()) == 0 ? '/svg/mask-001.svg': '/svg/mask-002.svg'
-  return podcast
-})
+const artistDataLoader = new ArtistDataLoader()
+const artists = artistDataLoader.findAll()
 console.log(podcasts)
 onMounted(() => {
 
@@ -34,7 +34,14 @@ onMounted(() => {
 
   <div class="section" v-for="podcast in podcasts">
     <h1>{{podcast.title}}</h1>
-    <ImageSvgMasking :src="podcast.picture" alt="Image Podcast" :mask="podcast.mask" />
+    <img :src="podcast.picture" alt="Image Podcast" />
+  </div>
+
+  <div class="section">
+      <div class="artist" v-for="artist in artists">
+        <ImageSvgMasking class="artist-image" :src="artist.picture" :alt="artist.name" :mask="artist.mask" />
+        <span>{{artist.name}}</span>
+      </div>
   </div>
 </template>
 
@@ -55,4 +62,7 @@ body {
 
 }
 
+.artist-image {
+  width: 200px;
+}
 </style>
