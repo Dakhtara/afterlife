@@ -52,7 +52,7 @@ export default class AfterlifeExperience
     {
         const sphere = new THREE.Mesh(
             new THREE.SphereGeometry(1, 32),
-            new THREE.MeshBasicMaterial({color: "#FFF"})
+            new THREE.MeshBasicMaterial({color: "#7a3a3a"})
         )
         this.scene.add(sphere)
     }
