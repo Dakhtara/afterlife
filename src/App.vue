@@ -5,6 +5,7 @@
 import AfterlifeExperience from "./AfterlifeExperience/AfterlifeExperience";
 import {onMounted, ref} from "vue";
 import Homepage from "./Pages/Homepage.vue";
+import TopNav from "./components/TopNav.vue";
 
 const canvas = ref(null)
 
@@ -17,11 +18,11 @@ onMounted(() => {
   }
 
   const experience = new AfterlifeExperience(canvas.value, options)
-
 })
 </script>
 
 <template>
+  <TopNav />
   <canvas id="afterlifeExperience" ref="canvas"></canvas>
 
   <Homepage />

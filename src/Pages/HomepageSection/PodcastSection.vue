@@ -1,7 +1,10 @@
 <template>
-  <div class="section" v-for="podcast in podcasts">
-    <h1>{{podcast.title}}</h1>
-    <img :src="podcast.picture" alt="Image Podcast" />
+  <div class="section">
+    <h1>Podcasts</h1>
+    <div class="podcast" v-for="podcast in podcasts">
+      <h1>{{ podcast.title }}</h1>
+      <img :src="podcast.picture" alt="Image Podcast"/>
+    </div>
   </div>
 
 </template>
