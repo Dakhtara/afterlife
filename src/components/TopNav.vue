@@ -1,11 +1,9 @@
 <template>
   <div class="container mx-auto mt-3">
-    <div class="columns-2 flex flex-1 justify-between items-center">
-      <div>
-        <router-link :to="{name: 'home'}">
+    <div class="flex flex-wrap flex-col md:flex-row justify-between items-center">
+        <router-link class="mb-3 md:mb-0" :to="{name: 'home'}">
           <img src="/afterlife/common/afterlife-logo-word.svg" width="200"/>
         </router-link>
-      </div>
 
       <div class="flex justify-between justify-items-center">
         <router-link class="nav-item hover:text-slate-200 transition-colors duration-200" :to="{name: 'events'}">
