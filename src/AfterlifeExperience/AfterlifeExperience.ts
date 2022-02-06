@@ -4,8 +4,12 @@ import Sizes from "./Utils/Sizes";
 import Time from "./Utils/Time";
 import Renderer from "./Renderer";
 import Camera from "./Camera";
+import Resources from "./Utils/Resources";
+import sources from "./sources";
+import World from "./World/World";
 
 let experience = null
+
 export default class AfterlifeExperience
 {
     camera: Camera
@@ -16,9 +20,8 @@ export default class AfterlifeExperience
     time: Time
     renderer: Renderer
     sphere: THREE.Mesh
-    colorR: number = Math.random()
-    colorG: number = Math.random()
-    colorB: number = Math.random()
+    resources: Resources
+    world: World
 
     constructor(canvas: HTMLElement|null = null, options: any = null) {
         if (experience) {
@@ -33,10 +36,11 @@ export default class AfterlifeExperience
         this.debug = new Debug()
         this.sizes = new Sizes()
         this.time = new Time()
+        this.resources = new Resources(sources)
         this.scene = new THREE.Scene()
         this.camera = new Camera(options.camera)
         this.renderer = new Renderer()
-
+        this.world = new World()
         // Resize event
         this.sizes.on('resize', () =>
         {
@@ -49,16 +53,6 @@ export default class AfterlifeExperience
             this.update()
         })
 
-        this.addSphere()
-    }
-
-    private addSphere(): void
-    {
-        this.sphere = new THREE.Mesh(
-            new THREE.SphereGeometry(1, 32),
-            new THREE.MeshBasicMaterial({color: "#7a3a3a"})
-        )
-        this.scene.add(this.sphere)
     }
 
     private resize(): void {
@@ -68,11 +62,7 @@ export default class AfterlifeExperience
 
     private update(): void {
         this.camera.onUpdate()
-        const colorR = Math.sin(Math.max(this.time.elapsed + this.colorR, 1) * .0001)
-        const colorG = Math.sin(Math.max(this.time.elapsed + this.colorG, 1) * .0002)
-        const colorB = Math.sin((this.time.elapsed + this.colorB) * .0003)
-        // @ts-ignore
-        this.sphere.material.color = new THREE.Color(colorR, colorG, colorB)
+        this.world.onUpdate()
         this.renderer.onUpdate()
     }
 
