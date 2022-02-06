@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "variables";
 
 .font-family-roboto-slab {
   font-family: 'Roboto Slab', serif;
@@ -21,6 +22,34 @@ body {
   @apply text-slate-200;
 }
 
+a.border-animated {
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 5px;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    content: " ";
+    width: 100%;
+    overflow: hidden;
+    background-color: $secondary-color;
+    transform: translate(-101%, 0);
+    transition: transform ease-out .2s;
+  }
+
+  &:hover::before {
+    transform: translate(0, 0);
+  }
+}
+.dimmed-background {
+  background-color: $dimmed-background;
+}
 
 .title {
   @extend .font-family-volkhov;

@@ -3,7 +3,7 @@
     <HomeTitle>Podcasts</HomeTitle>
     <div class="podcast" v-for="podcast in podcasts">
       <h1>{{ podcast.title }}</h1>
-      <img :src="podcast.picture" alt="Image Podcast"/>
+      <img :src="podcast.picture" alt="Image Podcast" loading="lazy" width="200" height="200"/>
     </div>
   </div>
 

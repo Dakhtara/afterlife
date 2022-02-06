@@ -5,7 +5,7 @@
           <img src="/afterlife/common/afterlife-logo-word.svg" width="200"/>
         </router-link>
 
-      <div class="flex justify-between justify-items-center">
+      <div class="flex w-full justify-between justify-items-center">
         <router-link class="nav-item hover:text-slate-200 transition-colors duration-200" :to="{name: 'events'}">
           Events
         </router-link>
@@ -32,7 +32,6 @@
 
 .nav-item {
   @apply uppercase;
-  @apply mr-6;
   @apply font-light;
   @apply text-base;
   @apply text-slate-400;

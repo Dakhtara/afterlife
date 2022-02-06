@@ -1,5 +1,5 @@
 <template>
-  <img :src="src" :alt="alt" :style="maskRef"/>
+  <img :src="src" :alt="alt" :style="maskRef" />
 </template>
 
 <script setup lang="ts">
