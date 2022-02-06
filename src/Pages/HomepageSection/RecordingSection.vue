@@ -7,7 +7,7 @@
       <div class="recording-content w-full xl:w-5/6 mt-8">
         <img class="recording-images mb-4 md:mb-0 mx-auto mt-10 " ref="recordingImages" :src="recording.picture" loading="lazy"
              width="200" height="200">
-        <div class="my-10 md:w-5/6">
+        <div class="my-10 md:w-5/6 xl:max-w-prose">
           <h2 class="text-xl mb-6">{{ recording.title }}</h2>
           <p class="font-light text-sm">{{ recording.content }}</p>
 
