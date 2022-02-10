@@ -1,19 +1,16 @@
-import podcasts from "../mock/podcasts"
-
-interface Podcast {
-    title: string
-    picture: string
-    duration: number
-    soundcloudUrl: string
-    date: string
-
-}
+import podcastsMock from "../mock/podcasts"
+import Podcast, {PodcastModel} from "../Models/Podcast";
 
 export default  class PodcastDataLoader
 {
 
     loadAll(): Array<Podcast>
     {
+        let podcasts = []
+        podcastsMock.forEach((podcast:PodcastModel) => {
+            podcasts.push(new Podcast(podcast))
+        })
+
         return podcasts
     }
 }

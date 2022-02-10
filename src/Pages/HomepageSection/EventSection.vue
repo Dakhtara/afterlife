@@ -9,7 +9,8 @@
           <h3 class="text-xl mb-10">{{event.date}} {{event.location}}</h3>
 
           <p class="font-light mb-10">
-            {{event.artists.join(' ')}}
+            Artists <br>
+            {{event.artists.join(', ')}}
           </p>
             <div>
               <a class="border-animated" target="_blank" :href="event.facebookLink" >

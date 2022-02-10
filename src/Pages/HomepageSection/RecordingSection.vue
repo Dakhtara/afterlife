@@ -11,7 +11,7 @@
           <h2 class="text-xl mb-6">{{ recording.title }}</h2>
           <p class="font-light text-sm">{{ recording.content }}</p>
 
-          <ul class="flex flex-wrap flex-row justify-between mt-5">
+          <ul class="flex flex-wrap gap-4 flex-row justify-between mt-5">
             <li v-for="socialLink in recording.socialMediaLinks">
               <a class="border-animated" :href="socialLink.link">
                 <SocialLink :type="socialLink.type"/>
@@ -49,10 +49,10 @@ recordings.forEach((recording: Recording) => {
 let onMouseMove = (e) => {
   let x = e.clientX / window.innerWidth
   let y = e.clientY / window.innerHeight
-  let transformX = -((x - .5) * 20)
-  let transformY = -((y - .5) * 20)
+  let transformX = -((x - .5) * 30)
+  let transformY = -((y - .5) * 30)
 
-  Tween.to('.recording-images', {
+  Tween.to('.recording', {
     duration: 1,
     x: transformX,
     y: transformY
@@ -77,6 +77,7 @@ onUnmounted(() => {
 
   @screen lg {
     background-color: transparent;
+    min-height: 400px;
 
     &::before {
       position: absolute;

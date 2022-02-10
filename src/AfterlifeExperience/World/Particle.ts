@@ -72,7 +72,7 @@ export default class Particle implements OnUpdateTriggerInterface {
                 (Math.sin(((this.time.elapsed * .001) + Math.PI * this.randomZ[i])) * .2)
             // @ts-ignore
             this.particles.geometry.attributes.position.array[i3] = this.baseX[i] +
-                (Math.sin(((this.time.elapsed * .001) + Math.PI * this.randomX[i])) * .2)
+                (Math.sin(((this.time.elapsed * .001) + Math.PI * (this.randomX[i] * 1.4))) * .2)
         }
         this.particles.geometry.attributes.position.needsUpdate = true
     }

@@ -51,9 +51,9 @@ a.border-animated {
   background-color: $dimmed-background;
 }
 
-.app .title {
+#app .title {
   @extend .font-family-volkhov;
-  font-weight: bold;
+  @apply font-bold;
   font-size: 2rem;
   letter-spacing: .37em;
 }
