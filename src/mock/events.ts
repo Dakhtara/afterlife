@@ -1,5 +1,6 @@
 export default [
     {
+        "id": 1,
         "location": "Amsterdam",
         "picture": "/afterlife/events/world-tour/Amsterdam-2016.jpeg",
         "date": "2016-10-20",
@@ -8,6 +9,7 @@ export default [
         "facebookLink": "https://www.facebook.com/events/1592495724382008/"
     },
     {
+        "id": 2,
         "location": "Amsterdam",
         "picture": "/afterlife/events/world-tour/Amsterdam-2017.jpeg",
         "date": "2017-10-19",
@@ -16,6 +18,7 @@ export default [
         "facebookLink": "https://www.facebook.com/events/2055428564685251"
     },
     {
+        "id": 3,
         "location": "Amsterdam",
         "picture": "/afterlife/events/world-tour/Amsterdam-2018.jpeg",
         "date": "2018-10-20",
