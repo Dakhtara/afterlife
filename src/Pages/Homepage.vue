@@ -43,4 +43,10 @@ onBeforeUnmount(() => {
 .experience-section {
   min-height: 80vh;
 }
+
+#afterlifeExperience {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+}
 </style>

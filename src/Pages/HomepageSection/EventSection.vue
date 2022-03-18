@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto mb-40">
     <HomeTitle>Events</HomeTitle>
-    <div class="event dimmed-background mb-16 md:mb-8 py-3" v-for="event in events">
+    <div class="event  mb-16 md:mb-8 py-3" v-for="event in events">
       <div class="grid md:grid-cols-2 gap-x-3 ">
           <img class="object-cover md:h-full" :src="event.picture" />
 

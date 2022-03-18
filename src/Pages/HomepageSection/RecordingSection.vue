@@ -73,7 +73,6 @@ onUnmounted(() => {
 .recording {
   position: relative;
   min-width: 100%;
-  background-color: $dimmed-background;
 
   @screen lg {
     background-color: transparent;

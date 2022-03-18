@@ -2,7 +2,7 @@
   <div class="container mx-auto mb-40">
     <HomeTitle>Afterlife</HomeTitle>
 
-    <div class="w-100 md:w-1/2 dimmed-background py-3 md:py-8 md:px-4">
+    <div class="w-100 md:w-1/2  py-3 md:py-8 md:px-4">
       <p class="mb-3 font-light">Afterlife: an odyssey through the realm of consciousness. These seven words perfectly exemplify what this new and promising project is about. Afterlife aims to take people on a journey, whether it comes to their events or releases. These two complement each other, with one aim; to bring the crowd into another dimension of perception with enthralling production that ignites the senses.
       </p>
       <p class="mb-3 font-light">
