@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 
-import {defineProps, ref} from "vue";
+import {ref} from "vue";
 
 const props = defineProps<{src: string, alt?: string, mask: string}>()
 const maskRef = ref()

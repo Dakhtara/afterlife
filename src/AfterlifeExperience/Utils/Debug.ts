@@ -1,9 +1,8 @@
-import * as dat from 'lil-gui'
 
 export default class Debug
 {
     active: boolean;
-    ui: dat.GUI;
+    ui: any;
 
     constructor()
     {
@@ -11,7 +10,9 @@ export default class Debug
 
         if(this.active)
         {
-            this.ui = new dat.GUI()
+            import('lil-gui').then((ui) => {
+                this.ui = new ui.GUI()
+            })
         }
     }
 }

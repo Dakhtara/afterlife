@@ -17,7 +17,7 @@
 import PodcastDataLoader from "../../DataLoader/PodcastDataLoader";
 import HomeTitle from "../../components/HomeTitle.vue";
 import {onBeforeUnmount, onMounted, onUnmounted, Ref, ref} from "vue";
-import gsap from 'gsap';
+import {gsap} from 'gsap';
 import Podcast from "../../Models/Podcast";
 
 const podcastsDataLoader = new PodcastDataLoader()

@@ -2,7 +2,7 @@
   <div class="container mx-auto mt-3 mb-4">
     <div class="flex flex-wrap md:flex-nowrap flex-col md:flex-row justify-between items-center">
         <router-link class="mb-3 md:mb-0" :to="{name: 'home'}">
-          <img src="/afterlife/common/afterlife-logo-word.svg" width="200"/>
+          <img src="/afterlife/common/afterlife-logo-word.svg?url" width="200"/>
         </router-link>
 
       <div class="flex w-full md:w-2/6 justify-between justify-items-center">
@@ -24,11 +24,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 </script>
 
 <style lang="scss">
-@import 'src/index';
+@use 'src/index';
 
 .nav-item {
   @apply uppercase;

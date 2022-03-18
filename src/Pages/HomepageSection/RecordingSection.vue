@@ -29,7 +29,7 @@
 import RecordingDataLoader, {Recording} from "../../DataLoader/RecordingDataLoader";
 import HomeTitle from "../../components/HomeTitle.vue";
 import {onMounted, onUnmounted, ref} from "vue";
-import Tween from "gsap"
+import {gsap} from "gsap"
 import SocialLink from "../../components/SocialLink.vue";
 
 let recordingImages = ref(null)
@@ -52,7 +52,7 @@ let onMouseMove = (e) => {
   let transformX = -((x - .5) * 30)
   let transformY = -((y - .5) * 30)
 
-  Tween.to('.recording', {
+  gsap.to('.recording', {
     duration: 1,
     x: transformX,
     y: transformY
