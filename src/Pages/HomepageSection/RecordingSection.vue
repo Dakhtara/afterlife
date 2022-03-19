@@ -34,8 +34,8 @@ import SocialLink from "../../components/SocialLink.vue";
 import {truncate} from "../../Utils/truncate.ts";
 
 let recordingImages: Ref<Array<any>> = ref([])
+
 const setRecordingImages = el => {
-  console.log(el)
   if (el) {
     recordingImages.value.push(el)
   }
