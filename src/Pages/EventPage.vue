@@ -32,9 +32,9 @@
               {{ event.artists.join(', ') }}
             </p>
             <div>
-              <a class="button inline-block rounded-md px-8 py-2" target="_blank" :href="event.facebookLink">
+              <ButtonLink :href="event.facebookLink" target="_blank">
                 <span>Event</span>
-              </a>
+              </ButtonLink>
             </div>
           </div>
         </div>
@@ -51,6 +51,7 @@ import HomeTitle from "../components/HomeTitle.vue";
 import FilterItem from "../components/FilterItem.vue";
 import {ref, Ref} from "vue";
 import gsap from 'gsap';
+import ButtonLink from "../components/ButtonLink.vue";
 
 const eventDataLoader = new EventDataLoader()
 const events = eventDataLoader.findAll()
@@ -121,11 +122,6 @@ const onBeforeEnter = (el) => {
 </script>
 
 <style lang="scss" scoped>
-.button {
-  background: #C7B248;
-  color: #323232;
-}
-
 .event {
   background: #1b2b3b;
 }

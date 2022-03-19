@@ -8,27 +8,28 @@
 <script setup lang="ts">
 
 import {ref, Ref} from "vue";
+import {SocialMediaLinkType} from "../DataLoader/RecordingDataLoader";
 
-const props = defineProps<{ type: string }>()
+const props = defineProps<{ type: SocialMediaLinkType }>()
 
 let url: Ref<string> = ref('');
 let width: Ref<number> = ref(0);
 let text: Ref<string> = ref(null)
 switch (props.type) {
-  case 'SPOTIFY':
+  case SocialMediaLinkType.Spotify:
     width.value = 93
     url.value = '/icons/spotify_white.png'
     break;
-  case 'BEATPORT':
+  case SocialMediaLinkType.Beatport:
     width.value = 90.72
     url.value = '/svg/beatport_logo_white.svg'
     break
-  case 'ITUNES':
+  case SocialMediaLinkType.Itunes:
     width.value = 28
     url.value = '/svg/apple_music_white.svg'
     text.value = 'Apple Music'
     break
-  case 'VINYL':
+  case SocialMediaLinkType.Vinyl:
     width.value = 28
     url.value = 'svg/vinyl.svg'
     text.value = 'Vinyl'
@@ -42,6 +43,7 @@ switch (props.type) {
 
 .social-link {
   display: flex;
+  align-items: center;
 }
 
 .social-text {

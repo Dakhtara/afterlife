@@ -6,7 +6,6 @@ import TopNav from "./components/TopNav.vue";
 
 <template>
   <TopNav />
-
   <router-view></router-view>
 </template>
 

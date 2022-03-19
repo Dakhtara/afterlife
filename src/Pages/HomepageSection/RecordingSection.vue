@@ -2,14 +2,14 @@
   <div class="container mx-auto mb-40">
 
     <HomeTitle>Recordings</HomeTitle>
-    <div class="recording" v-for="recording in recordings">
+    <div class="recording" v-for="(recording, index) in recordings"  :key="index" >
 
       <div class="recording-content w-full xl:w-5/6 mt-8">
-        <img class="recording-images mb-4 md:mb-0 mx-auto mt-10 " ref="recordingImages" :src="recording.picture" loading="lazy"
+        <img class="recording-images mb-4 md:mb-0 mx-auto mt-10" :ref="setRecordingImages" :src="recording.picture" loading="lazy"
              width="200" height="200">
         <div class="my-10 md:w-5/6 xl:max-w-prose">
           <h2 class="text-xl mb-6">{{ recording.title }}</h2>
-          <p class="font-light text-sm">{{ recording.content }}</p>
+          <p class="font-light text-sm">{{ truncate(recording.content) }}</p>
 
           <ul class="flex flex-wrap gap-4 flex-row justify-between mt-5">
             <li v-for="socialLink in recording.socialMediaLinks">
@@ -26,25 +26,22 @@
 </template>
 
 <script setup lang="ts">
-import RecordingDataLoader, {Recording} from "../../DataLoader/RecordingDataLoader";
+import RecordingDataLoader from "../../DataLoader/RecordingDataLoader";
 import HomeTitle from "../../components/HomeTitle.vue";
-import {onMounted, onUnmounted, ref} from "vue";
+import {onMounted, onUnmounted, Ref, ref} from "vue";
 import {gsap} from "gsap"
 import SocialLink from "../../components/SocialLink.vue";
+import {truncate} from "../../Utils/truncate.ts";
 
-let recordingImages = ref(null)
-
-const recordingDataLoader = new RecordingDataLoader()
-const truncate = (input: string, maxLength: number = 900) => {
-  if (input.length > maxLength) {
-    return input.substring(0, maxLength) + '...'
+let recordingImages: Ref<Array<any>> = ref([])
+const setRecordingImages = el => {
+  console.log(el)
+  if (el) {
+    recordingImages.value.push(el)
   }
-  return input
 }
-const recordings = recordingDataLoader.findAll()
-recordings.forEach((recording: Recording) => {
-  recording.content = truncate(recording.content)
-})
+const recordingDataLoader = new RecordingDataLoader()
+const recordings = recordingDataLoader.mostRecent()
 
 let onMouseMove = (e) => {
   let x = e.clientX / window.innerWidth
@@ -57,6 +54,18 @@ let onMouseMove = (e) => {
     x: transformX,
     y: transformY
   })
+
+  const imagesNodes = [...recordingImages.value]
+  let index = 0
+  for (let recordingImage of imagesNodes) {
+    gsap.to(recordingImage, {
+      duration: 1,
+      x: transformX * 1.2,
+      y: transformY * 1.2,
+      delay: index * .1
+    })
+    index++
+  }
 }
 
 onMounted(() => {
@@ -68,7 +77,7 @@ onUnmounted(() => {
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../../variables";
 .recording {
   position: relative;

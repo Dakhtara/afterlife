@@ -1,6 +1,6 @@
 import recordings from "../mock/recordings"
 
-enum SocialMediaLinkType {
+export enum SocialMediaLinkType {
     Spotify = "SPOTIFY",
     Beatport = "BEATPORT",
     Itunes = "ITUNES",
@@ -18,10 +18,16 @@ export interface Recording {
     picture: string
     content: string
     socialMediaLinks: Array<SocialMediaLink>
+    date: string
 }
 
 export default class RecordingDataLoader
 {
+    mostRecent(count: number = 3): Array<Recording>
+    {
+        return this.findAll().splice(0, count);
+    }
+
     findAll(): Array<Recording> {
         return recordings
     }
