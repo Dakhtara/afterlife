@@ -1,5 +1,5 @@
 <template>
-  <a class="button inline-block rounded-md px-8 py-2" :target="target">
+  <a class="button inline-block rounded-md px-8 py-2">
     <slot></slot>
   </a>
 
