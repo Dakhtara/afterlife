@@ -21,9 +21,9 @@
     </div>
 
     <TransitionGroup name="list" tag="ul" :duration="1400" :appear="true" @enter="onEnter" :css="false" @leave="onLeave" @before-enter="onBeforeEnter">
-      <div class="event mb-16 md:mb-8 ti-radius-top-right ti-radius-top-left" v-for="(event, index) in proxyRef" :data-index="index" v-bind:key="event.id">
+      <div class="event mb-8 md:mb-8 rounded-md" v-for="(event, index) in proxyRef" :data-index="index" v-bind:key="event.id">
         <div class="grid md:grid-cols-2 gap-x-3">
-          <img class="object-cover ti-radius-top-left ti-radius-top-right md:h-full" :src="event.picture"/>
+          <img class="object-cover rounded-t-md md:rounded-l-md md:rounded-tr-none md:h-full" :src="event.picture"/>
 
           <div class="flex flex-col justify-between px-4 py-3">
             <h3 class="text-xl mb-10">{{ event.date }} {{ event.location }}</h3>
