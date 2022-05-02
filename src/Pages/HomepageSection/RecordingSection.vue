@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto mb-40">
+  <div id="recording-section" class="container mx-auto mb-40">
 
     <HomeTitle>Recordings</HomeTitle>
     <div class="recording" v-for="(recording, index) in recordings"  :key="index" >

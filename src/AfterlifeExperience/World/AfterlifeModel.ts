@@ -41,7 +41,7 @@ export default class AfterlifeModel implements OnUpdateTriggerInterface
             {
                 child.rotation.x = Math.PI * .5
                 child.updateMatrix()
-                child.geometry.applyMatrix4(child.matrix );
+                child.geometry.applyMatrix4(child.matrix);
 
                 child.position.set( 0, 0, 0 );
                 child.rotation.set( 0, 0, 0 );
